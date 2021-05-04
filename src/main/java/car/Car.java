@@ -10,7 +10,7 @@ public class Car {
 
     public Car(String name) {
         this.name = name;
-        value = 0;
+        value = -1;
         status = CarStatus.STOP;
         distance = 0;
     }
@@ -40,6 +40,10 @@ public class Car {
             System.out.print("-");
         }
         System.out.println();
+    }
+
+    public boolean containDistance(int distance){
+        return this.distance == distance;
     }
 
     public CarStatus getStatus() {
