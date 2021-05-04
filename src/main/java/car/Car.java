@@ -31,6 +31,17 @@ public class Car {
         }
     }
 
+    /*
+       자동차 이동 출력
+     */
+    public void printCar(){
+        System.out.print(this.name + " : ");
+        for(int i=0 ; i<this.distance ; i++){
+            System.out.print("-");
+        }
+        System.out.println();
+    }
+
     public CarStatus getStatus() {
         return status;
     }
