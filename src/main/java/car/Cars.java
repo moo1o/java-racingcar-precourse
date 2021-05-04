@@ -1,5 +1,6 @@
 package car;
 
+import utils.Message;
 import utils.NumberGenerator;
 
 import java.sql.Array;
@@ -8,7 +9,7 @@ import java.util.List;
 
 public class Cars {
     List<Car> carList;
-    List<Car> winnerCars;
+    List<Car> winnerList;
 
     public Cars(List<Car> carList) {
         this.carList = carList;
@@ -52,16 +53,15 @@ public class Cars {
     /*
         우승자 체크
      */
-    public List<Car> winnerCheck(){
+    public void winnerCheck(){
         int winnerDistance = 0;
-        winnerCars = new ArrayList<>();
+        winnerList = new ArrayList<>();
         for(Car car : carList){
             winnerDistance = Math.max(winnerDistance, car.getDistance());
         }
         for(Car car : carList) {
             addWinner(car, winnerDistance);
         }
-        return winnerCars;
     }
 
     /*
@@ -69,7 +69,24 @@ public class Cars {
      */
     private void addWinner(Car car, int winnerDistance){
         if(car.getDistance() == winnerDistance){
-            winnerCars.add(car);
+            winnerList.add(car);
         }
+    }
+
+    /*
+        우승자 출력
+     */
+    public void printWinner(){
+        for(int i=0 ; i<winnerList.size() ; i++){
+            System.out.print(winnerList.get(i).getName());
+            comaOrResult(i);
+        }
+    }
+
+    private void comaOrResult(int idx){
+        if (winnerList.size() - 1 != idx)
+            System.out.print(", ");
+        else if(winnerList.size() - 1 == idx)
+            System.out.print(Message.RESULT.getMessage());
     }
 }
