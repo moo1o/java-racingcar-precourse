@@ -15,7 +15,7 @@ public class CarRacingApplication {
         String input = InputApi.input();
         String[] names = input.split(",");
         // 이름 앞뒤 공백 제거 후 자동차 객체 생성
-        for(int i=0 ; i<names.length ; i++){
+        for (int i = 0; i < names.length; i++) {
             names[i] = names[i].trim();
             carList.add(new Car(names[i]));
         }
@@ -24,7 +24,7 @@ public class CarRacingApplication {
         int times = Integer.parseInt(InputApi.input());
 
         System.out.print(Message.START.getMessage());
-        for(int i=0 ; i<times ; i++){
+        for (int i = 0; i < times; i++) {
             Racing.racingCars(cars);
         }
         cars.winnerCheck();

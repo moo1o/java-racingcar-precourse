@@ -10,7 +10,7 @@ public class CarTest {
 
     @ParameterizedTest
     @CsvSource({"pobi", "crong", "honux"})
-    public void createCarTest(String name){
+    public void createCarTest(String name) {
         car = new Car(name);
         assertThat(car.getName()).isEqualTo(name);
         assertThat(car.getValue()).isEqualTo(0);
@@ -18,7 +18,7 @@ public class CarTest {
     }
 
     @Test
-    public void moveTest(){
+    public void moveTest() {
         car = new Car("pobi");
         car.setValue(2); //3이하 -> 정지
         car.moveCar();

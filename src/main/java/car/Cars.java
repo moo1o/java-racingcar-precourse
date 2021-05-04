@@ -17,15 +17,15 @@ public class Cars {
     /*
         car list 반환
      */
-    public List<Car> getCarList(){
+    public List<Car> getCarList() {
         return carList;
     }
 
     /*
         자동차 랜덤숫자 부여
      */
-    public void randomToCar(){
-        for(Car car : carList){
+    public void randomToCar() {
+        for (Car car : carList) {
             car.setValue(NumberGenerator.numberGenerate());
         }
     }
@@ -33,8 +33,8 @@ public class Cars {
     /*
         자동차 이동
      */
-    public void moveCars(){
-        for(Car car : carList){
+    public void moveCars() {
+        for (Car car : carList) {
             car.moveCar();
         }
     }
@@ -42,8 +42,8 @@ public class Cars {
     /*
         자동차 이동 출력
      */
-    public void printCars(){
-        for(Car car : carList){
+    public void printCars() {
+        for (Car car : carList) {
             car.printCar();
         }
         System.out.println();
@@ -52,13 +52,13 @@ public class Cars {
     /*
         우승자 체크
      */
-    public List<Car> winnerCheck(){
+    public List<Car> winnerCheck() {
         int winnerDistance = 0;
         winnerList = new ArrayList<>();
-        for(Car car : carList){
+        for (Car car : carList) {
             winnerDistance = Math.max(winnerDistance, car.getDistance());
         }
-        for(Car car : carList) {
+        for (Car car : carList) {
             addWinner(car, winnerDistance);
         }
         return winnerList;
@@ -67,8 +67,8 @@ public class Cars {
     /*
         우승자 추가
      */
-    private void addWinner(Car car, int winnerDistance){
-        if(car.getDistance() == winnerDistance){
+    private void addWinner(Car car, int winnerDistance) {
+        if (car.getDistance() == winnerDistance) {
             winnerList.add(car);
         }
     }
@@ -76,17 +76,17 @@ public class Cars {
     /*
         우승자 출력
      */
-    public void printWinner(){
-        for(int i=0 ; i<winnerList.size() ; i++){
+    public void printWinner() {
+        for (int i = 0; i < winnerList.size(); i++) {
             System.out.print(winnerList.get(i).getName());
             comaOrResult(i);
         }
     }
 
-    private void comaOrResult(int idx){
+    private void comaOrResult(int idx) {
         if (winnerList.size() - 1 != idx)
             System.out.print(", ");
-        else if(winnerList.size() - 1 == idx)
+        else if (winnerList.size() - 1 == idx)
             System.out.print(Message.RESULT.getMessage());
     }
 }

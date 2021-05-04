@@ -18,8 +18,8 @@ public class Car {
      2. 값이 3이하 일 경우
       - 정지
      */
-    public void moveCar(){
-        if(value >=4){
+    public void moveCar() {
+        if (value >= 4) {
             distance++;
         }
     }
@@ -27,15 +27,15 @@ public class Car {
     /*
        자동차 이동 출력
      */
-    public void printCar(){
+    public void printCar() {
         System.out.print(this.name + " : ");
-        for(int i=0 ; i<this.distance ; i++){
+        for (int i = 0; i < this.distance; i++) {
             System.out.print("-");
         }
         System.out.println();
     }
 
-    public boolean containDistance(int distance){
+    public boolean containDistance(int distance) {
         return this.distance == distance;
     }
 

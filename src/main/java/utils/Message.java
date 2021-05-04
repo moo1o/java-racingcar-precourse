@@ -8,11 +8,11 @@ public enum Message {
 
     final private String message;
 
-    private Message(String message){
+    private Message(String message) {
         this.message = message;
     }
 
-    public String getMessage(){
+    public String getMessage() {
         return message;
     }
 }
