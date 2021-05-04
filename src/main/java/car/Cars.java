@@ -53,7 +53,7 @@ public class Cars {
     /*
         우승자 체크
      */
-    public void winnerCheck(){
+    public List<Car> winnerCheck(){
         int winnerDistance = 0;
         winnerList = new ArrayList<>();
         for(Car car : carList){
@@ -62,6 +62,7 @@ public class Cars {
         for(Car car : carList) {
             addWinner(car, winnerDistance);
         }
+        return winnerList;
     }
 
     /*
