@@ -1,17 +1,13 @@
 package car;
 
-import utils.CarStatus;
-
 public class Car {
     private String name;
     private int value;
-    private CarStatus status;
     private int distance;
 
     public Car(String name) {
         this.name = name;
         value = -1;
-        status = CarStatus.STOP;
         distance = 0;
     }
 
@@ -24,10 +20,7 @@ public class Car {
      */
     public void moveCar(){
         if(value >=4){
-            status = CarStatus.GO;
             distance++;
-        }else if(value <= 3){
-            status = CarStatus.STOP;
         }
     }
 
@@ -44,14 +37,6 @@ public class Car {
 
     public boolean containDistance(int distance){
         return this.distance == distance;
-    }
-
-    public CarStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(CarStatus status) {
-        this.status = status;
     }
 
     public int getValue() {
